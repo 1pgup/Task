@@ -11,14 +11,14 @@ int main(int argc, char* argv[]) {
   if (n < 1) throw invalid_argument("Неверное значение n");
 
   int m = stoi(argv[2]);
-  if (m <= 1 || m > n + 1) throw invalid_argument("Неверное значение m");
+  if (m <= 1) throw invalid_argument("Неверное значение m");
 
   int k = -1;
   int cur = 1;
   cout << cur;
   while (true) {
     k = cur + (m - 1);
-    if (k > n) k -= n;
+    while (k > n) k -= n;
 
     if (k == 1) break;
 
